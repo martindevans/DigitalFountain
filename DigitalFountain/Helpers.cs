@@ -42,5 +42,10 @@ namespace DigitalFountain
             while (blocks.Count < size)
                 blocks.Add(r.Next(0, blockCount));
         }
+
+        public static bool IsEmpty<T>(this IEnumerable<T> enumerable)
+        {
+            return enumerable.GetEnumerator().MoveNext();
+        }
     }
 }
